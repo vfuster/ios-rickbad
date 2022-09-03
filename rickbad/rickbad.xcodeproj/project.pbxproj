@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2433352828C3E6EF00CEE670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433352728C3E6EF00CEE670 /* AppDelegate.swift */; };
-		2433352A28C3E6EF00CEE670 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433352928C3E6EF00CEE670 /* SceneDelegate.swift */; };
-		2433352C28C3E6EF00CEE670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433352B28C3E6EF00CEE670 /* ViewController.swift */; };
-		2433352F28C3E6EF00CEE670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2433352D28C3E6EF00CEE670 /* Main.storyboard */; };
 		2433353128C3E6F100CEE670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2433353028C3E6F100CEE670 /* Assets.xcassets */; };
 		2433353428C3E6F100CEE670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2433353228C3E6F100CEE670 /* LaunchScreen.storyboard */; };
 		2433353F28C3E6F200CEE670 /* rickbadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433353E28C3E6F200CEE670 /* rickbadTests.swift */; };
 		2433354928C3E6F200CEE670 /* rickbadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433354828C3E6F200CEE670 /* rickbadUITests.swift */; };
 		2433354B28C3E6F200CEE670 /* rickbadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433354A28C3E6F200CEE670 /* rickbadUITestsLaunchTests.swift */; };
+		2433355828C3E8C300CEE670 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433355728C3E8C300CEE670 /* TabBarViewController.xib */; };
+		2433355A28C3E8F000CEE670 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433355928C3E8F000CEE670 /* TabBarViewController.swift */; };
+		2433355D28C3EBC200CEE670 /* BattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433355C28C3EBC200CEE670 /* BattleViewController.xib */; };
+		2433355F28C3EBF300CEE670 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433355E28C3EBF300CEE670 /* BattleViewController.swift */; };
+		2433356228C3EC9800CEE670 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356028C3EC9800CEE670 /* HistoryViewController.swift */; };
+		2433356328C3EC9800CEE670 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433356128C3EC9800CEE670 /* HistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +41,6 @@
 /* Begin PBXFileReference section */
 		2433352428C3E6EF00CEE670 /* rickbad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rickbad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2433352728C3E6EF00CEE670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2433352928C3E6EF00CEE670 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2433352B28C3E6EF00CEE670 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2433352E28C3E6EF00CEE670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2433353028C3E6F100CEE670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2433353328C3E6F100CEE670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2433353528C3E6F200CEE670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,12 @@
 		2433354428C3E6F200CEE670 /* rickbadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rickbadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2433354828C3E6F200CEE670 /* rickbadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rickbadUITests.swift; sourceTree = "<group>"; };
 		2433354A28C3E6F200CEE670 /* rickbadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rickbadUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2433355728C3E8C300CEE670 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		2433355928C3E8F000CEE670 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2433355C28C3EBC200CEE670 /* BattleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleViewController.xib; sourceTree = "<group>"; };
+		2433355E28C3EBF300CEE670 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		2433356028C3EC9800CEE670 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		2433356128C3EC9800CEE670 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,8 @@
 		2433352628C3E6EF00CEE670 /* rickbad */ = {
 			isa = PBXGroup;
 			children = (
+				2433355B28C3E92500CEE670 /* Controller */,
 				2433352728C3E6EF00CEE670 /* AppDelegate.swift */,
-				2433352928C3E6EF00CEE670 /* SceneDelegate.swift */,
-				2433352B28C3E6EF00CEE670 /* ViewController.swift */,
-				2433352D28C3E6EF00CEE670 /* Main.storyboard */,
 				2433353028C3E6F100CEE670 /* Assets.xcassets */,
 				2433353228C3E6F100CEE670 /* LaunchScreen.storyboard */,
 				2433353528C3E6F200CEE670 /* Info.plist */,
@@ -125,6 +129,19 @@
 				2433354A28C3E6F200CEE670 /* rickbadUITestsLaunchTests.swift */,
 			);
 			path = rickbadUITests;
+			sourceTree = "<group>";
+		};
+		2433355B28C3E92500CEE670 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2433355728C3E8C300CEE670 /* TabBarViewController.xib */,
+				2433355928C3E8F000CEE670 /* TabBarViewController.swift */,
+				2433355C28C3EBC200CEE670 /* BattleViewController.xib */,
+				2433355E28C3EBF300CEE670 /* BattleViewController.swift */,
+				2433356028C3EC9800CEE670 /* HistoryViewController.swift */,
+				2433356128C3EC9800CEE670 /* HistoryViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +248,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2433355D28C3EBC200CEE670 /* BattleViewController.xib in Resources */,
+				2433355828C3E8C300CEE670 /* TabBarViewController.xib in Resources */,
 				2433353428C3E6F100CEE670 /* LaunchScreen.storyboard in Resources */,
 				2433353128C3E6F100CEE670 /* Assets.xcassets in Resources */,
-				2433352F28C3E6EF00CEE670 /* Main.storyboard in Resources */,
+				2433356328C3EC9800CEE670 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2433352C28C3E6EF00CEE670 /* ViewController.swift in Sources */,
+				2433355A28C3E8F000CEE670 /* TabBarViewController.swift in Sources */,
 				2433352828C3E6EF00CEE670 /* AppDelegate.swift in Sources */,
-				2433352A28C3E6EF00CEE670 /* SceneDelegate.swift in Sources */,
+				2433356228C3EC9800CEE670 /* HistoryViewController.swift in Sources */,
+				2433355F28C3EBF300CEE670 /* BattleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2433352D28C3E6EF00CEE670 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2433352E28C3E6EF00CEE670 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2433353228C3E6F100CEE670 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +453,6 @@
 				INFOPLIST_FILE = rickbad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +479,6 @@
 				INFOPLIST_FILE = rickbad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

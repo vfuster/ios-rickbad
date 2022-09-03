@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BattleViewController.swift
 //  rickbad
 //
 //  Created by Valeria Fuster on 03/09/22.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class BattleViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("aaa")
     }
-
-
 }
-
