@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <viewLayoutGuide key="safeArea" id="Zom-DS-tU4"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-329" y="114"/>
+            <point key="canvasLocation" x="-330.43478260869568" y="113.83928571428571"/>
         </view>
     </objects>
     <resources>

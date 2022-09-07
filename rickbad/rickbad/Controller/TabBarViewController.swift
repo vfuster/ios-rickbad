@@ -12,17 +12,24 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewControllers([createBattleController()], animated: true)
+        setViewControllers([createBattleController(), createHistoryController()], animated: true)
         selectedIndex = 0
         setupTabBar()
     }
     
     private func createBattleController() -> UINavigationController {
-        
         let battleController = BattleViewController()
-        battleController.tabBarItem = UITabBarItem(title: "Batalha", image: UIImage(systemName: "house.fill"), tag: 0)
+        battleController.tabBarItem = UITabBarItem(title: "Batalhas", image: UIImage(systemName: "house"), tag: 0)
         
         let navigationController = UINavigationController(rootViewController: battleController)
+        return navigationController
+    }
+    
+    private func createHistoryController() -> UINavigationController {
+        let historyController = HistoryViewController()
+        historyController.tabBarItem = UITabBarItem(title: "Historico", image: UIImage(systemName: "leaf.fill"), tag: 0)
+        
+        let navigationController = UINavigationController(rootViewController: historyController)
         return navigationController
     }
     
