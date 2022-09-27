@@ -27,7 +27,7 @@ class TabBarViewController: UITabBarController {
     
     private func createHistoryController() -> UINavigationController {
         let historyController = HistoryViewController()
-        historyController.tabBarItem = UITabBarItem(title: "Historico", image: UIImage(systemName: "leaf.fill"), tag: 0)
+        historyController.tabBarItem = UITabBarItem(title: "Histórico", image: UIImage(systemName: "leaf.fill"), tag: 0)
         
         let navigationController = UINavigationController(rootViewController: historyController)
         return navigationController
@@ -36,6 +36,7 @@ class TabBarViewController: UITabBarController {
     private func setupTabBar(){
         tabBar.barTintColor = .black
         tabBar.isTranslucent = false
-        tabBar.backgroundColor = UIColor(red: 0.27, green: 0.733, blue: 0.938, alpha: 1)
+        tabBar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        tabBar.tintColor = .green
     }
 }
