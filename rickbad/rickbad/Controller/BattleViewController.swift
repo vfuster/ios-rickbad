@@ -10,12 +10,15 @@ import UIKit
 class BattleViewController: UIViewController {
     
     // Outlets View Carregamento
+    @IBOutlet weak var loadingContainer: UIView!
+    
     @IBOutlet weak var iconLoading: UIImageView!
     @IBOutlet weak var messageLoading: UILabel!
     
     // Outlets View Batalha
-    @IBOutlet weak var buttonStartBattle: UIButton!
+    @IBOutlet weak var contentContainer: UIView!
     
+    @IBOutlet weak var buttonStartBattle: UIButton!
     @IBOutlet weak var viewFirstImage: UIView!
     @IBOutlet weak var firstImage: UIImageView!
     @IBOutlet weak var namePersonOne: UILabel!
@@ -30,6 +33,8 @@ class BattleViewController: UIViewController {
         super.viewDidLoad()
         setupViewCarregamento()
         setupViewBatalha()
+        loadingContainer.isHidden = false
+        contentContainer.isHidden = true
         
     }
     
