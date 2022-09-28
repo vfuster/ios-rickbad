@@ -10,8 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BattleViewController" customModule="rickbad" customModuleProvider="target">
             <connections>
-                <outlet property="buttonBattle" destination="vqh-6Y-GtY" id="Po6-tk-eKm"/>
-                <outlet property="buttonStartBattle" destination="vqh-6Y-GtY" id="eh3-pF-NYT"/>
+                <outlet property="buttonStartBattle" destination="QzC-yF-AFl" id="MdK-FR-HPB"/>
                 <outlet property="firstImage" destination="X6y-rc-sTy" id="JEt-d5-nlo"/>
                 <outlet property="iconLoading" destination="o8k-2S-4zZ" id="NXR-Ea-a5j"/>
                 <outlet property="messageLoading" destination="dAw-sH-6jj" id="g91-sr-vSs"/>
@@ -28,8 +27,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-UK-X28">
-                    <rect key="frame" x="0.0" y="44" width="414" height="398"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzC-yF-AFl">
+                    <rect key="frame" x="139" y="592" width="139" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="INICIAR BATALHA"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-UK-X28" userLabel="View Loading">
+                    <rect key="frame" x="0.0" y="244" width="414" height="408"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ovni.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-2S-4zZ">
                             <rect key="frame" x="87" y="53" width="240" height="128"/>
@@ -42,25 +47,15 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzC-yF-AFl">
-                            <rect key="frame" x="138" y="314" width="139" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="INICIAR BATALHA"/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="408" id="Yyw-Ex-0is"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="miS-df-PK4">
-                    <rect key="frame" x="0.0" y="454" width="414" height="408"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miS-df-PK4" userLabel="View Content">
+                    <rect key="frame" x="0.0" y="244" width="414" height="408"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqh-6Y-GtY">
-                            <rect key="frame" x="138" y="337" width="139" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="INICIAR BATALHA"/>
-                        </button>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWc-r7-dqE">
                             <rect key="frame" x="11" y="50" width="193" height="245"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,14 +93,23 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="408" id="UBR-Ym-NwZ"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="cDN-if-vvR"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" id="Y2q-2f-EGq"/>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="trailing" secondItem="cDN-if-vvR" secondAttribute="trailing" id="skx-pX-FOl"/>
+                <constraint firstItem="miS-df-PK4" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" id="5Ko-cE-TM8"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="trailing" secondItem="cDN-if-vvR" secondAttribute="trailing" id="GY8-iZ-VxL"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" id="RPM-8f-vMJ"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" id="abQ-2H-i9g"/>
+                <constraint firstItem="miS-df-PK4" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" id="etW-OE-ywK"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerY" secondItem="aKD-Lg-gwm" secondAttribute="centerY" id="f0v-DV-qee"/>
+                <constraint firstItem="miS-df-PK4" firstAttribute="trailing" secondItem="cDN-if-vvR" secondAttribute="trailing" id="fcF-og-uXe"/>
+                <constraint firstItem="miS-df-PK4" firstAttribute="centerY" secondItem="aKD-Lg-gwm" secondAttribute="centerY" id="jJi-x5-HdK"/>
             </constraints>
             <point key="canvasLocation" x="150.72463768115944" y="111.83035714285714"/>
         </view>
