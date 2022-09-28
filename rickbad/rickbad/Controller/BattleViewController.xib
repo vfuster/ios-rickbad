@@ -10,7 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BattleViewController" customModule="rickbad" customModuleProvider="target">
             <connections>
+                <outlet property="buttonBattle" destination="vqh-6Y-GtY" id="Po6-tk-eKm"/>
+                <outlet property="buttonStartBattle" destination="vqh-6Y-GtY" id="eh3-pF-NYT"/>
+                <outlet property="firstImage" destination="X6y-rc-sTy" id="JEt-d5-nlo"/>
+                <outlet property="iconLoading" destination="o8k-2S-4zZ" id="NXR-Ea-a5j"/>
+                <outlet property="messageLoading" destination="dAw-sH-6jj" id="g91-sr-vSs"/>
+                <outlet property="namePersonOne" destination="2q1-qM-oxa" id="AkG-Kh-xqL"/>
+                <outlet property="namePersonTwo" destination="1qZ-gT-dFt" id="AGm-v1-ffD"/>
+                <outlet property="secondImage" destination="zNy-y6-7vS" id="uCl-2E-wn1"/>
                 <outlet property="view" destination="aKD-Lg-gwm" id="yIn-qi-Yg9"/>
+                <outlet property="viewFirstImage" destination="NWc-r7-dqE" id="wzg-if-t9x"/>
+                <outlet property="viewSecondImage" destination="pJq-JD-jAX" id="tQa-NW-cIW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
