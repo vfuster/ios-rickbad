@@ -10,6 +10,7 @@ import UIKit
 class BattleViewController: UIViewController {
     
     private var charactersRicks: [CharacterRickMorty] = []
+    private var charactersBad: [CharacterBad] = []
     
     // Outlets View Carregamento
     @IBOutlet weak var loadingContainer: UIView!
@@ -60,10 +61,35 @@ class BattleViewController: UIViewController {
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let results = try
-                    decoder.decode(CharacterRickMortyResponse.self, from: data)
+                    let results = try decoder.decode(CharacterRickMortyResponse.self, from: data)
                     self.charactersRicks = results.results
                     print(results)
+                    
+                    guard let urlBad = URL(string: "https://www.breakingbadapi.com/api/characters") else {
+                        return
+                    }
+                    
+                    let requestBad = URLRequest(url: urlBad)
+                    request.httpMethod = "GET"
+                    
+                    let taskBad = URLSession.shared.dataTask(with: requestBad) { (dataBad, responseBad, errorBad) in
+                        
+                        if let errorBad = errorBad {
+                            print("Error took place Bad \(errorBad)")
+                            return
+                        }
+                        
+                        if let dataBad = dataBad {
+                            do {
+                                let resultsBad = try decoder.decode([CharacterBad].self, from: dataBad)
+                                self.charactersBad = resultsBad
+                                print(resultsBad)
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    }
+                    taskBad.resume()
                 } catch {
                     print(error)
                 }

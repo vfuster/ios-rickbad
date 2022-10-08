@@ -9,10 +9,6 @@ import Foundation
 
 
 struct CharacterBad: Codable {
-    let id: Int
     let name: String
-    let image: String
+    let img: String
 }
-
-
-
