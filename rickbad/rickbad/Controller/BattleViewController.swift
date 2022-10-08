@@ -36,8 +36,7 @@ class BattleViewController: UIViewController {
         super.viewDidLoad()
         setupViewCarregamento()
         setupViewBatalha()
-        loadingContainer.isHidden = false
-        contentContainer.isHidden = true
+        estadoTelaQuandoInicia()
         requestChacacter()
         
     }
@@ -84,6 +83,12 @@ class BattleViewController: UIViewController {
                                 let resultsBad = try decoder.decode([CharacterBad].self, from: dataBad)
                                 self.charactersBad = resultsBad
                                 print(resultsBad)
+                                
+                                // mudar aqui o estado da tela
+                                DispatchQueue.main.async {
+                                    self.mudarEstadoTelaPraConteudo()
+                                }
+
                             } catch {
                                 print(error)
                             }
@@ -114,5 +119,18 @@ class BattleViewController: UIViewController {
         viewSecondImage.layer.cornerRadius = 25
         
         namePersonTwo.textColor = UIColor.white
+    }
+    
+    func mudarEstadoTelaPraConteudo() {
+        loadingContainer.isHidden = true
+        contentContainer.isHidden = false
+        
+        namePersonOne.text = charactersBad.randomElement()?.name
+        namePersonTwo.text = charactersRicks.randomElement()?.name
+    }
+    
+    func estadoTelaQuandoInicia() {
+        loadingContainer.isHidden = false
+        contentContainer.isHidden = true
     }
 }
