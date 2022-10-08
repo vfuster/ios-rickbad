@@ -125,8 +125,39 @@ class BattleViewController: UIViewController {
         loadingContainer.isHidden = true
         contentContainer.isHidden = false
         
-        namePersonOne.text = charactersBad.randomElement()?.name
-        namePersonTwo.text = charactersRicks.randomElement()?.name
+        let randomRick = charactersRicks.randomElement()
+        let randomBad = charactersBad.randomElement()
+        
+        namePersonOne.text = randomBad?.name
+        namePersonTwo.text = randomRick?.name
+        
+        guard let urlString = randomRick?.image, let urlRick = URL(string: urlString) else {
+            return
+        }
+        
+        let taskRickImage = URLSession.shared.dataTask(with: urlRick) { (data, response, responseError) in
+
+            if let imageRick = data {
+                DispatchQueue.main.async {
+                    self.secondImage.image = UIImage(data: imageRick)
+                }
+            }
+        }
+        taskRickImage.resume()
+        
+        guard let urlStringBad = randomBad?.img, let urlBad = URL(string: urlStringBad) else {
+            return
+        }
+        
+        let taskBadImage = URLSession.shared.dataTask(with: urlBad) { (data, response, responseError) in
+            
+            if let imageBad = data {
+                DispatchQueue.main.async {
+                    self.firstImage.image = UIImage(data: imageBad)
+                }
+            }
+        }
+        taskBadImage.resume()
     }
     
     func estadoTelaQuandoInicia() {
