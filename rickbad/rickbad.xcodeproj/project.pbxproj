@@ -20,6 +20,8 @@
 		2433356228C3EC9800CEE670 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356028C3EC9800CEE670 /* HistoryViewController.swift */; };
 		2433356328C3EC9800CEE670 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2433356128C3EC9800CEE670 /* HistoryViewController.xib */; };
 		2433356628E36E0C00CEE670 /* ovni.png in Resources */ = {isa = PBXBuildFile; fileRef = 2433356528E36E0C00CEE670 /* ovni.png */; };
+		2433356928EA4B6900CEE670 /* CharacterRickMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */; };
+		2433356B28EA4D2F00CEE670 /* CharacterBad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356A28EA4D2F00CEE670 /* CharacterBad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2433356028C3EC9800CEE670 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		2433356128C3EC9800CEE670 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		2433356528E36E0C00CEE670 /* ovni.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ovni.png; path = ../../../../../../Downloads/ovni.png; sourceTree = "<group>"; };
+		2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRickMorty.swift; sourceTree = "<group>"; };
+		2433356A28EA4D2F00CEE670 /* CharacterBad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		2433352628C3E6EF00CEE670 /* rickbad */ = {
 			isa = PBXGroup;
 			children = (
+				2433356728EA4AF700CEE670 /* Model */,
 				2433355B28C3E92500CEE670 /* Controller */,
 				2433352728C3E6EF00CEE670 /* AppDelegate.swift */,
 				2433353028C3E6F100CEE670 /* Assets.xcassets */,
@@ -153,6 +158,15 @@
 				2433356528E36E0C00CEE670 /* ovni.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		2433356728EA4AF700CEE670 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */,
+				2433356A28EA4D2F00CEE670 /* CharacterBad.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2433355A28C3E8F000CEE670 /* TabBarViewController.swift in Sources */,
+				2433356928EA4B6900CEE670 /* CharacterRickMorty.swift in Sources */,
 				2433352828C3E6EF00CEE670 /* AppDelegate.swift in Sources */,
+				2433356B28EA4D2F00CEE670 /* CharacterBad.swift in Sources */,
 				2433356228C3EC9800CEE670 /* HistoryViewController.swift in Sources */,
 				2433355F28C3EBF300CEE670 /* BattleViewController.swift in Sources */,
 			);

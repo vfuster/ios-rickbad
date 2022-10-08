@@ -9,6 +9,8 @@ import UIKit
 
 class BattleViewController: UIViewController {
     
+    private var charactersRicks: [CharacterRickMorty] = []
+    
     // Outlets View Carregamento
     @IBOutlet weak var loadingContainer: UIView!
     
@@ -35,8 +37,41 @@ class BattleViewController: UIViewController {
         setupViewBatalha()
         loadingContainer.isHidden = false
         contentContainer.isHidden = true
+        requestChacacter()
         
     }
+    
+    private func requestChacacter() {
+        
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let results = try
+                    decoder.decode(CharacterRickMortyResponse.self, from: data)
+                    self.charactersRicks = results.results
+                    print(results)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
     
     func setupViewCarregamento() {
         
