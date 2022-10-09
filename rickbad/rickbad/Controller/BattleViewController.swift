@@ -38,7 +38,7 @@ class BattleViewController: UIViewController {
         setupViewBatalha()
         estadoTelaQuandoInicia()
         requestChacacter()
-        
+        setupLayoutButton()
     }
     
     private func requestChacacter() {
@@ -103,8 +103,7 @@ class BattleViewController: UIViewController {
         task.resume()
     }
     
-    
-    func setupViewCarregamento() {
+    private func setupViewCarregamento() {
         
         messageLoading.textColor = UIColor.white
         
@@ -114,16 +113,17 @@ class BattleViewController: UIViewController {
         namePersonOne.textColor = UIColor.white
     }
     
-    func setupViewBatalha() {
+    private func setupViewBatalha() {
         viewSecondImage.backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 50/255, alpha: 1)
         viewSecondImage.layer.cornerRadius = 25
         
         namePersonTwo.textColor = UIColor.white
     }
     
-    func mudarEstadoTelaPraConteudo() {
+    private func mudarEstadoTelaPraConteudo() {
         loadingContainer.isHidden = true
         contentContainer.isHidden = false
+        setupButtonBattleEnable()
         
         let randomRick = charactersRicks.randomElement()
         let randomBad = charactersBad.randomElement()
@@ -160,8 +160,24 @@ class BattleViewController: UIViewController {
         taskBadImage.resume()
     }
     
-    func estadoTelaQuandoInicia() {
+    private func estadoTelaQuandoInicia() {
         loadingContainer.isHidden = false
         contentContainer.isHidden = true
+        setupButtonBattleDisable()
+    }
+    
+    private func setupLayoutButton() {
+        buttonStartBattle.layer.cornerRadius = 20
+        buttonStartBattle.tintColor = .white
+    }
+    
+    private func setupButtonBattleEnable() {
+        buttonStartBattle.isEnabled = true
+        buttonStartBattle.backgroundColor = UIColor(red: 47/255, green: 147/255, blue: 33/255, alpha: 1)
+    }
+    
+    private func setupButtonBattleDisable() {
+        buttonStartBattle.isEnabled = false
+        buttonStartBattle.backgroundColor = .lightGray
     }
 }
