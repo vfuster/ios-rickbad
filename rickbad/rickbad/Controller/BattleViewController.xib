@@ -38,15 +38,17 @@
                     <buttonConfiguration key="configuration" style="plain" title="Iniciar Batalha"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-UK-X28" userLabel="View Loading">
-                    <rect key="frame" x="0.0" y="285" width="412" height="326"/>
+                    <rect key="frame" x="0.0" y="244" width="410" height="326"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ovni.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-2S-4zZ">
-                            <rect key="frame" x="87" y="53" width="240" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ovni.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-2S-4zZ">
+                            <rect key="frame" x="145" y="53" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="Jjx-OP-rT9"/>
+                                <constraint firstAttribute="width" constant="120" id="yz2-xt-oR7"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aqui vai texto de carregamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAw-sH-6jj">
-                            <rect key="frame" x="90" y="233" width="237" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aguarde, obtendo dados..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAw-sH-6jj">
+                            <rect key="frame" x="104" y="233" width="202" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -54,7 +56,11 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="o8k-2S-4zZ" firstAttribute="centerX" secondItem="dAw-sH-6jj" secondAttribute="centerX" id="ADr-lU-KYX"/>
+                        <constraint firstItem="o8k-2S-4zZ" firstAttribute="top" secondItem="ZMg-UK-X28" secondAttribute="top" constant="53" id="EWB-VU-XL1"/>
+                        <constraint firstItem="dAw-sH-6jj" firstAttribute="top" secondItem="o8k-2S-4zZ" secondAttribute="bottom" constant="60" id="Ld2-i0-eO8"/>
                         <constraint firstAttribute="height" constant="326" id="Yyw-Ex-0is"/>
+                        <constraint firstItem="o8k-2S-4zZ" firstAttribute="centerX" secondItem="ZMg-UK-X28" secondAttribute="centerX" id="biS-mW-dfx"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miS-df-PK4" userLabel="View Content">
@@ -125,7 +131,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="pJq-JD-jAX" firstAttribute="top" secondItem="miS-df-PK4" secondAttribute="top" constant="8" id="4BC-zS-2XU"/>
                         <constraint firstItem="pJq-JD-jAX" firstAttribute="leading" secondItem="NWc-r7-dqE" secondAttribute="trailing" constant="6" id="9WX-dS-q2m"/>
@@ -140,16 +146,15 @@
             <viewLayoutGuide key="safeArea" id="cDN-if-vvR"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="leading" secondItem="miS-df-PK4" secondAttribute="leading" id="1Oq-VH-vox"/>
                 <constraint firstItem="miS-df-PK4" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" id="5Ko-cE-TM8"/>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="trailing" secondItem="cDN-if-vvR" secondAttribute="trailing" id="GY8-iZ-VxL"/>
                 <constraint firstItem="QzC-yF-AFl" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" id="KWZ-H5-CKV"/>
                 <constraint firstItem="QzC-yF-AFl" firstAttribute="top" secondItem="miS-df-PK4" secondAttribute="bottom" constant="22" id="ORP-ch-ued"/>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" id="RPM-8f-vMJ"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" constant="-1" id="RPM-8f-vMJ"/>
                 <constraint firstItem="cDN-if-vvR" firstAttribute="trailing" secondItem="QzC-yF-AFl" secondAttribute="trailing" constant="8" id="WHx-jP-37Q"/>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" id="abQ-2H-i9g"/>
                 <constraint firstItem="miS-df-PK4" firstAttribute="centerX" secondItem="aKD-Lg-gwm" secondAttribute="centerX" id="crR-T8-f2p"/>
                 <constraint firstItem="QzC-yF-AFl" firstAttribute="leading" secondItem="cDN-if-vvR" secondAttribute="leading" constant="8" id="cxW-a4-xCk"/>
-                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerY" secondItem="aKD-Lg-gwm" secondAttribute="centerY" id="f0v-DV-qee"/>
+                <constraint firstItem="ZMg-UK-X28" firstAttribute="centerY" secondItem="aKD-Lg-gwm" secondAttribute="centerY" constant="-41" id="f0v-DV-qee"/>
                 <constraint firstItem="miS-df-PK4" firstAttribute="trailing" secondItem="cDN-if-vvR" secondAttribute="trailing" id="fcF-og-uXe"/>
                 <constraint firstItem="miS-df-PK4" firstAttribute="centerY" secondItem="aKD-Lg-gwm" secondAttribute="centerY" constant="-41" id="jJi-x5-HdK"/>
             </constraints>
@@ -160,9 +165,6 @@
         <image name="ovni.png" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
