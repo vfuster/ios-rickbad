@@ -180,4 +180,19 @@ class BattleViewController: UIViewController {
         buttonStartBattle.isEnabled = false
         buttonStartBattle.backgroundColor = .lightGray
     }
+    
+    @IBAction func startBattle(_ sender: Any) {
+        
+        let tamanhoNomeBad = namePersonOne.text!.count
+        
+        let tamanhoNomeRick = namePersonTwo.text!.count
+        
+        if tamanhoNomeBad > tamanhoNomeRick {
+            print("O personagem do Bad ganho! \(namePersonOne.text)")
+        } else {
+            print("O personagem do Rick ganho!\(namePersonTwo.text)")
+        }
+
+    }
+    
 }
