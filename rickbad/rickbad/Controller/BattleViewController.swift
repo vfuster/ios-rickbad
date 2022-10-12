@@ -183,16 +183,29 @@ class BattleViewController: UIViewController {
     
     @IBAction func startBattle(_ sender: Any) {
         
-        let tamanhoNomeBad = namePersonOne.text!.count
+        guard let nomePersonagemUm = namePersonOne.text, let nomePersonagemDois = namePersonTwo.text else {
+            return
+        }
         
-        let tamanhoNomeRick = namePersonTwo.text!.count
+        let tamanhoNomeBad = nomePersonagemUm.count
+        let tamanhoNomeRick = nomePersonagemDois.count
         
         if tamanhoNomeBad > tamanhoNomeRick {
-            print("O personagem do Bad ganho! \(namePersonOne.text)")
+            showAlert(ganhador: nomePersonagemUm)
         } else {
-            print("O personagem do Rick ganho!\(namePersonTwo.text)")
+            showAlert(ganhador: nomePersonagemDois)
         }
 
+    }
+    
+    private func showAlert(ganhador: String) {
+        let alert = UIAlertController(title: "Resultado", message: "O ganhador da batalha é: \(ganhador)", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Nova Batalha", style: .default, handler: { _ in
+            self.mudarEstadoTelaPraConteudo()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
