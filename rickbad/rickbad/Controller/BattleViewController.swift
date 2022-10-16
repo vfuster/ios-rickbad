@@ -37,11 +37,12 @@ class BattleViewController: UIViewController {
         setupLoadingView()
         setupBattleView()
         changeToInitialState()
-        requestChacacter()
+        requestCharacter()
         setupLayoutButton()
+        setupImage()
     }
     
-    private func requestChacacter() {
+    private func requestCharacter() {
         
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
             return
@@ -125,6 +126,16 @@ class BattleViewController: UIViewController {
         contentContainer.isHidden = false
         setupButtonBattleEnable()
         
+        viewFirstImage.alpha = 1
+        viewSecondImage.alpha = 1
+        viewFirstImage.backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 50/255, alpha: 1)
+        viewSecondImage.backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 50/255, alpha: 1)
+        firstImage.alpha = 1
+        secondImage.alpha = 1
+        namePersonOne.alpha = 1
+        namePersonTwo.alpha = 1
+        buttonStartBattle.setTitle("Iniciar Batalha", for: .normal)
+        
         let randomRick = charactersRicks.randomElement()
         let randomBad = charactersBad.randomElement()
         
@@ -183,29 +194,37 @@ class BattleViewController: UIViewController {
     
     @IBAction func startBattle(_ sender: Any) {
         
-        guard let nomePersonagemUm = namePersonOne.text, let nomePersonagemDois = namePersonTwo.text else {
-            return
-        }
-        
-        let tamanhoNomeBad = nomePersonagemUm.count
-        let tamanhoNomeRick = nomePersonagemDois.count
-        
-        if tamanhoNomeBad > tamanhoNomeRick {
-            showAlert(ganhador: nomePersonagemUm)
+        if buttonStartBattle.title(for: .normal) == "Preparar nova batalha" {
+            self.changeStateToContent()
         } else {
-            showAlert(ganhador: nomePersonagemDois)
-        }
+            guard let nomePersonagemUm = namePersonOne.text, let nomePersonagemDois = namePersonTwo.text else {
+                return
+            }
+            
+            let tamanhoNomeBad = nomePersonagemUm.count
+            let tamanhoNomeRick = nomePersonagemDois.count
+            
+            if tamanhoNomeBad > tamanhoNomeRick {
+                viewFirstImage.backgroundColor = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
+                viewSecondImage.alpha = 0.5
+                secondImage.alpha = 0.5
+                namePersonTwo.alpha = 0.5
 
+            } else {
+                viewSecondImage.backgroundColor = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
+                viewFirstImage.alpha = 0.5
+                firstImage.alpha = 0.5
+                namePersonOne.alpha = 0.5
+            }
+
+            buttonStartBattle.setTitle("Preparar nova batalha", for: .normal)
+        }
+        
     }
     
-    private func showAlert(ganhador: String) {
-        let alert = UIAlertController(title: "Resultado", message: "O ganhador da batalha é: \(ganhador)", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Nova Batalha", style: .default, handler: { _ in
-            self.changeStateToContent()
-        }))
-        self.present(alert, animated: true, completion: nil)
+    private func setupImage() {
+        firstImage.layer.cornerRadius = 20
+        secondImage.layer.cornerRadius = 20
     }
     
 }
