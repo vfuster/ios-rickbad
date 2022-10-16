@@ -34,9 +34,9 @@ class BattleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewCarregamento()
-        setupViewBatalha()
-        estadoTelaQuandoInicia()
+        setupLoadingView()
+        setupBattleView()
+        changeToInitialState()
         requestChacacter()
         setupLayoutButton()
     }
@@ -86,7 +86,7 @@ class BattleViewController: UIViewController {
                                 
                                 // mudar aqui o estado da tela
                                 DispatchQueue.main.async {
-                                    self.mudarEstadoTelaPraConteudo()
+                                    self.changeStateToContent()
                                 }
 
                             } catch {
@@ -103,7 +103,7 @@ class BattleViewController: UIViewController {
         task.resume()
     }
     
-    private func setupViewCarregamento() {
+    private func setupLoadingView() {
         
         messageLoading.textColor = UIColor.white
         
@@ -113,14 +113,14 @@ class BattleViewController: UIViewController {
         namePersonOne.textColor = UIColor.white
     }
     
-    private func setupViewBatalha() {
+    private func setupBattleView() {
         viewSecondImage.backgroundColor = UIColor(red: 50/255, green: 51/255, blue: 50/255, alpha: 1)
         viewSecondImage.layer.cornerRadius = 25
         
         namePersonTwo.textColor = UIColor.white
     }
     
-    private func mudarEstadoTelaPraConteudo() {
+    private func changeStateToContent() {
         loadingContainer.isHidden = true
         contentContainer.isHidden = false
         setupButtonBattleEnable()
@@ -160,7 +160,7 @@ class BattleViewController: UIViewController {
         taskBadImage.resume()
     }
     
-    private func estadoTelaQuandoInicia() {
+    private func changeToInitialState() {
         loadingContainer.isHidden = false
         contentContainer.isHidden = true
         setupButtonBattleDisable()
@@ -203,7 +203,7 @@ class BattleViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Nova Batalha", style: .default, handler: { _ in
-            self.mudarEstadoTelaPraConteudo()
+            self.changeStateToContent()
         }))
         self.present(alert, animated: true, completion: nil)
     }

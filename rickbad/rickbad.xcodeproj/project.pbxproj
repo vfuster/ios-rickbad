@@ -22,6 +22,7 @@
 		2433356628E36E0C00CEE670 /* ovni.png in Resources */ = {isa = PBXBuildFile; fileRef = 2433356528E36E0C00CEE670 /* ovni.png */; };
 		2433356928EA4B6900CEE670 /* CharacterRickMorty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */; };
 		2433356B28EA4D2F00CEE670 /* CharacterBad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433356A28EA4D2F00CEE670 /* CharacterBad.swift */; };
+		2450D32928F76696003369A2 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450D32828F76696003369A2 /* Battle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2433356528E36E0C00CEE670 /* ovni.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ovni.png; path = ../../../../../../Downloads/ovni.png; sourceTree = "<group>"; };
 		2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRickMorty.swift; sourceTree = "<group>"; };
 		2433356A28EA4D2F00CEE670 /* CharacterBad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBad.swift; sourceTree = "<group>"; };
+		2450D32828F76696003369A2 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				2433356828EA4B6900CEE670 /* CharacterRickMorty.swift */,
 				2433356A28EA4D2F00CEE670 /* CharacterBad.swift */,
+				2450D32828F76696003369A2 /* Battle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2433355A28C3E8F000CEE670 /* TabBarViewController.swift in Sources */,
+				2450D32928F76696003369A2 /* Battle.swift in Sources */,
 				2433356928EA4B6900CEE670 /* CharacterRickMorty.swift in Sources */,
 				2433352828C3E6EF00CEE670 /* AppDelegate.swift in Sources */,
 				2433356B28EA4D2F00CEE670 /* CharacterBad.swift in Sources */,
