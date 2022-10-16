@@ -12,6 +12,11 @@ class BattleViewController: UIViewController {
     private var charactersRicks: [CharacterRickMorty] = []
     private var charactersBad: [CharacterBad] = []
     
+    // Constants
+    private let kPrepareButtonText = "Preparar nova batalha"
+    private let kColorGreenWinner = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
+    private let kAlphaLoser = 0.5
+    
     // Outlets View Carregamento
     @IBOutlet weak var loadingContainer: UIView!
     
@@ -194,32 +199,36 @@ class BattleViewController: UIViewController {
     
     @IBAction func startBattle(_ sender: Any) {
         
-        if buttonStartBattle.title(for: .normal) == "Preparar nova batalha" {
+        if buttonStartBattle.title(for: .normal) == kPrepareButtonText {
             self.changeStateToContent()
         } else {
-            guard let nomePersonagemUm = namePersonOne.text, let nomePersonagemDois = namePersonTwo.text else {
-                return
-            }
-            
-            let tamanhoNomeBad = nomePersonagemUm.count
-            let tamanhoNomeRick = nomePersonagemDois.count
-            
-            if tamanhoNomeBad > tamanhoNomeRick {
-                viewFirstImage.backgroundColor = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
-                viewSecondImage.alpha = 0.5
-                secondImage.alpha = 0.5
-                namePersonTwo.alpha = 0.5
-
-            } else {
-                viewSecondImage.backgroundColor = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
-                viewFirstImage.alpha = 0.5
-                firstImage.alpha = 0.5
-                namePersonOne.alpha = 0.5
-            }
-
-            buttonStartBattle.setTitle("Preparar nova batalha", for: .normal)
+            self.setWinnerAndChangeState()
+        }
+    }
+    
+    private func setWinnerAndChangeState() {
+        guard let personOneName = namePersonOne.text, let personTwoName = namePersonTwo.text else {
+            return
         }
         
+        let nameBadSize = personOneName.count
+        let nameRickSize = personTwoName.count
+        
+        if nameBadSize > nameRickSize {
+            viewFirstImage.backgroundColor = kColorGreenWinner
+            
+            for view in [viewSecondImage, secondImage, namePersonTwo] {
+                view?.alpha = kAlphaLoser
+            }
+
+        } else {
+            viewSecondImage.backgroundColor = kColorGreenWinner
+            
+            for view in [viewFirstImage, firstImage, namePersonOne] {
+                view?.alpha = kAlphaLoser
+            }
+        }
+        buttonStartBattle.setTitle(kPrepareButtonText, for: .normal)
     }
     
     private func setupImage() {
