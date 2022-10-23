@@ -9,7 +9,6 @@ import UIKit
 
 class HistoryCell: UITableViewCell {
 
-    
     @IBOutlet weak var winnerImage: UIImageView!
     @IBOutlet weak var winnerName: UILabel!
     @IBOutlet weak var winnerDate: UILabel!

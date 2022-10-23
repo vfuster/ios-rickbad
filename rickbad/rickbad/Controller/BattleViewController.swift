@@ -48,7 +48,6 @@ class BattleViewController: UIViewController {
     }
     
     private func requestCharacter() {
-        
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
             return
         }
