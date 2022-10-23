@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,40 +19,42 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uz-If-fVR">
                         <rect key="frame" x="16" y="10" width="64" height="64"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="64" id="41I-uR-CA7"/>
                             <constraint firstAttribute="height" constant="64" id="apc-zD-gws"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffn-9p-FVM">
-                        <rect key="frame" x="84" y="12" width="226" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick Sanchez venceu Gus Fring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffn-9p-FVM">
+                        <rect key="frame" x="92" y="17" width="218" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="iEn-ie-JfF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHs-Ge-ftk">
-                        <rect key="frame" x="84" y="38" width="226" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em 20 de outubro de 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHs-Ge-ftk">
+                        <rect key="frame" x="92" y="43" width="218" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="4wt-UZ-v0u"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="MHs-Ge-ftk" secondAttribute="trailing" constant="10" id="16f-sc-g7q"/>
                     <constraint firstItem="MHs-Ge-ftk" firstAttribute="top" secondItem="ffn-9p-FVM" secondAttribute="bottom" constant="4" id="CYG-Hn-7Wy"/>
-                    <constraint firstItem="ffn-9p-FVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="HTf-P5-Qsx"/>
+                    <constraint firstItem="ffn-9p-FVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="HTf-P5-Qsx"/>
                     <constraint firstAttribute="trailing" secondItem="ffn-9p-FVM" secondAttribute="trailing" constant="10" id="JQ1-V8-YrG"/>
                     <constraint firstItem="0uz-If-fVR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bM1-wa-Uy5"/>
                     <constraint firstItem="0uz-If-fVR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bWB-g1-uux"/>
-                    <constraint firstItem="ffn-9p-FVM" firstAttribute="leading" secondItem="0uz-If-fVR" secondAttribute="trailing" constant="4" id="lX3-U2-Ubk"/>
+                    <constraint firstItem="ffn-9p-FVM" firstAttribute="leading" secondItem="0uz-If-fVR" secondAttribute="trailing" constant="12" id="lX3-U2-Ubk"/>
                     <constraint firstAttribute="bottom" secondItem="0uz-If-fVR" secondAttribute="bottom" constant="10" id="qgq-JZ-yFk"/>
-                    <constraint firstItem="MHs-Ge-ftk" firstAttribute="leading" secondItem="0uz-If-fVR" secondAttribute="trailing" constant="4" id="tRV-hf-Zgn"/>
+                    <constraint firstItem="MHs-Ge-ftk" firstAttribute="leading" secondItem="0uz-If-fVR" secondAttribute="trailing" constant="12" id="tRV-hf-Zgn"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -63,4 +66,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="95.089285714285708"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

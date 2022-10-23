@@ -31,6 +31,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         
         let winnerCell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
         
+        winnerCell.setupCell()
+        
         return winnerCell
         
     }
