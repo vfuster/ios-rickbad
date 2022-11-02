@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Battle {
+struct Battle: Codable {
     let winner: String
     let loser: String
     let date: Date
-    let image: String
+   // let image: String
 }

@@ -9,12 +9,22 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource {
     
+    private var battles: [Battle] = []
+    private let key = "battle-key"
+    
     @IBOutlet weak var historyTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
         historyTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        readBattlesFromUserDefaults()
+        historyTableView.reloadData()
+
     }
     
     private func registerCell() {
@@ -24,17 +34,27 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 60
+        return battles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let winnerCell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
         
-        winnerCell.setupCell()
+        let battle = battles[indexPath.row]
+        winnerCell.setupCell(battle: battle)
         
         return winnerCell
         
     }
-
+    
+    private func readBattlesFromUserDefaults() {
+        let decoder = JSONDecoder()
+        let userDefaults = UserDefaults.standard
+        
+        if let data = userDefaults.value(forKey: key) as? Data,
+           let battlesDecode = try? decoder.decode([Battle].self, from: data) {
+            self.battles = battlesDecode
+        }
+    }
 }

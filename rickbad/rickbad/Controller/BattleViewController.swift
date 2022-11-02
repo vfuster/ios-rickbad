@@ -12,6 +12,9 @@ class BattleViewController: UIViewController {
     private var charactersRicks: [CharacterRickMorty] = []
     private var charactersBad: [CharacterBad] = []
     
+    private var battles: [Battle] = []
+    private let key = "battle-key"
+    
     // Constants
     private let kPrepareButtonText = "Preparar nova batalha"
     private let kColorGreenWinner = UIColor(red: 139/255, green: 207/255, blue: 33/255, alpha: 1)
@@ -219,13 +222,19 @@ class BattleViewController: UIViewController {
             for view in [viewSecondImage, secondImage, namePersonTwo] {
                 view?.alpha = kAlphaLoser
             }
+            let batalha = Battle(winner: personOneName, loser: personTwoName, date: Date())
+            self.battles.append(batalha)
+            self.saveBattlesOnUserDefaults()
 
         } else {
             viewSecondImage.backgroundColor = kColorGreenWinner
-            
+            print("rick")
             for view in [viewFirstImage, firstImage, namePersonOne] {
                 view?.alpha = kAlphaLoser
             }
+            let batalha = Battle(winner: personTwoName, loser: personOneName, date: Date())
+            self.battles.append(batalha)
+            self.saveBattlesOnUserDefaults()
         }
         buttonStartBattle.setTitle(kPrepareButtonText, for: .normal)
     }
@@ -233,6 +242,15 @@ class BattleViewController: UIViewController {
     private func setupImage() {
         firstImage.layer.cornerRadius = 20
         secondImage.layer.cornerRadius = 20
+    }
+    
+    private func saveBattlesOnUserDefaults() {
+        let encoder = JSONEncoder()
+        
+        if let encodedBattles = try? encoder.encode(battles) {
+            let battlesDefaults = UserDefaults.standard
+            battlesDefaults.set(encodedBattles, forKey: key)
+        }
     }
     
 }
