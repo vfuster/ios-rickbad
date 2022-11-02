@@ -12,7 +12,6 @@ class BattleViewController: UIViewController {
     private var charactersRicks: [CharacterRickMorty] = []
     private var charactersBad: [CharacterBad] = []
     
-    private var battles: [Battle] = []
     private let key = "battle-key"
     
     // Constants
@@ -222,9 +221,8 @@ class BattleViewController: UIViewController {
             for view in [viewSecondImage, secondImage, namePersonTwo] {
                 view?.alpha = kAlphaLoser
             }
-            let batalha = Battle(winner: personOneName, loser: personTwoName, date: Date())
-            self.battles.append(batalha)
-            self.saveBattlesOnUserDefaults()
+            let battle = Battle(winner: personOneName, loser: personTwoName, date: Date())
+            self.saveBattleOnUserDefaults(battle: battle )
 
         } else {
             viewSecondImage.backgroundColor = kColorGreenWinner
@@ -232,9 +230,8 @@ class BattleViewController: UIViewController {
             for view in [viewFirstImage, firstImage, namePersonOne] {
                 view?.alpha = kAlphaLoser
             }
-            let batalha = Battle(winner: personTwoName, loser: personOneName, date: Date())
-            self.battles.append(batalha)
-            self.saveBattlesOnUserDefaults()
+            let battle = Battle(winner: personTwoName, loser: personOneName, date: Date())
+            self.saveBattleOnUserDefaults(battle: battle)
         }
         buttonStartBattle.setTitle(kPrepareButtonText, for: .normal)
     }
@@ -244,12 +241,23 @@ class BattleViewController: UIViewController {
         secondImage.layer.cornerRadius = 20
     }
     
-    private func saveBattlesOnUserDefaults() {
+    private func saveBattleOnUserDefaults(battle: Battle) {
+        let userDefaults = UserDefaults.standard
+    
+        let decoder = JSONDecoder()
+        var tempBattles: [Battle] = []
+        
+        if let data = userDefaults.value(forKey: key) as? Data,
+           let battlesDecode = try? decoder.decode([Battle].self, from: data) {
+            tempBattles = battlesDecode
+        }
+        
+        tempBattles.append(battle)
+        
         let encoder = JSONEncoder()
         
-        if let encodedBattles = try? encoder.encode(battles) {
-            let battlesDefaults = UserDefaults.standard
-            battlesDefaults.set(encodedBattles, forKey: key)
+        if let encodedBattles = try? encoder.encode(tempBattles) {
+            userDefaults.set(encodedBattles, forKey: key)
         }
     }
     
