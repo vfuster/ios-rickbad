@@ -69,7 +69,6 @@ class BattleViewController: UIViewController {
                     let decoder = JSONDecoder()
                     let results = try decoder.decode(CharacterRickMortyResponse.self, from: data)
                     self.charactersRicks = results.results
-                    print(results)
                     
                     guard let urlBad = URL(string: "https://www.breakingbadapi.com/api/characters") else {
                         return
@@ -89,7 +88,6 @@ class BattleViewController: UIViewController {
                             do {
                                 let resultsBad = try decoder.decode([CharacterBad].self, from: dataBad)
                                 self.charactersBad = resultsBad
-                                print(resultsBad)
                                 
                                 // mudar aqui o estado da tela
                                 DispatchQueue.main.async {
@@ -221,7 +219,7 @@ class BattleViewController: UIViewController {
             for view in [viewSecondImage, secondImage, namePersonTwo] {
                 view?.alpha = kAlphaLoser
             }
-            if let imageData = firstImage.image?.pngData() {
+            if let imageData = firstImage.image?.jpegData(compressionQuality: 0.5) {
                 let battle = Battle(winner: personOneName, loser: personTwoName, date: Date(), image: imageData)
                 self.saveBattleOnUserDefaults(battle: battle )
             }
@@ -232,7 +230,7 @@ class BattleViewController: UIViewController {
                 view?.alpha = kAlphaLoser
             }
             
-            if let imageData = secondImage.image?.pngData() {
+            if let imageData = secondImage.image?.jpegData(compressionQuality: 0.5) {
                 let battle = Battle(winner: personTwoName, loser: personOneName, date: Date(), image: imageData)
                 self.saveBattleOnUserDefaults(battle: battle)
             }
