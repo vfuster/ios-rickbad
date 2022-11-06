@@ -44,6 +44,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         let battle = battles[indexPath.row]
         winnerCell.setupCell(battle: battle)
         
+        
+        
         return winnerCell
         
     }

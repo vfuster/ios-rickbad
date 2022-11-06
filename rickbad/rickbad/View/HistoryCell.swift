@@ -33,5 +33,11 @@ class HistoryCell: UITableViewCell {
         winnerDate.textColor = UIColor(red: 148/255, green: 144/255, blue: 144/255, alpha: 1)
         
         winnerName.text = "\(battle.winner) venceu \(battle.loser)"
+    
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        print(formatter.string(from: battle.date))
+
+        winnerDate.text = formatter.string(from: battle.date)
     }
 }
