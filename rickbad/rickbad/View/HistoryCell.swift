@@ -36,8 +36,9 @@ class HistoryCell: UITableViewCell {
     
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        print(formatter.string(from: battle.date))
 
         winnerDate.text = formatter.string(from: battle.date)
+        winnerImage.image = UIImage(data: battle.image)
+        
     }
 }

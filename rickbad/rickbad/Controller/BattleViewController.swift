@@ -221,17 +221,21 @@ class BattleViewController: UIViewController {
             for view in [viewSecondImage, secondImage, namePersonTwo] {
                 view?.alpha = kAlphaLoser
             }
-            let battle = Battle(winner: personOneName, loser: personTwoName, date: Date())
-            self.saveBattleOnUserDefaults(battle: battle )
+            if let imageData = firstImage.image?.pngData() {
+                let battle = Battle(winner: personOneName, loser: personTwoName, date: Date(), image: imageData)
+                self.saveBattleOnUserDefaults(battle: battle )
+            }
 
         } else {
             viewSecondImage.backgroundColor = kColorGreenWinner
-            print("rick")
             for view in [viewFirstImage, firstImage, namePersonOne] {
                 view?.alpha = kAlphaLoser
             }
-            let battle = Battle(winner: personTwoName, loser: personOneName, date: Date())
-            self.saveBattleOnUserDefaults(battle: battle)
+            
+            if let imageData = secondImage.image?.pngData() {
+                let battle = Battle(winner: personTwoName, loser: personOneName, date: Date(), image: imageData)
+                self.saveBattleOnUserDefaults(battle: battle)
+            }
         }
         buttonStartBattle.setTitle(kPrepareButtonText, for: .normal)
     }
