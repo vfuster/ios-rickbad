@@ -54,7 +54,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         
         if let data = userDefaults.value(forKey: key) as? Data,
            let battlesDecode = try? decoder.decode([Battle].self, from: data) {
-            self.battles = battlesDecode
+            self.battles = battlesDecode.reversed()
         }
     }
 }

@@ -25,6 +25,7 @@
 		2450D32928F76696003369A2 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450D32828F76696003369A2 /* Battle.swift */; };
 		2450D32D2900AA53003369A2 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450D32B2900AA53003369A2 /* HistoryCell.swift */; };
 		2450D32E2900AA53003369A2 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2450D32C2900AA53003369A2 /* HistoryCell.xib */; };
+		24F1B3D029218B7A00135CAB /* HistoryCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F1B3CF29218B7A00135CAB /* HistoryCellTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		2450D32828F76696003369A2 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		2450D32B2900AA53003369A2 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		2450D32C2900AA53003369A2 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		24F1B3CF29218B7A00135CAB /* HistoryCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCellTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2433353E28C3E6F200CEE670 /* rickbadTests.swift */,
+				24F1B3CF29218B7A00135CAB /* HistoryCellTest.swift */,
 			);
 			path = rickbadTests;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F1B3D029218B7A00135CAB /* HistoryCellTest.swift in Sources */,
 				2433353F28C3E6F200CEE670 /* rickbadTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
